@@ -3,13 +3,15 @@
 <thead>
 <tr>
     <th scope='col'> Coca Cola </th>
-     <th scope='col'> Envaseee </th>
+     <th scope='col'> Envasee</th>
 </tr>
 </thead>
     {foreach from=$cocacola item=$coca}
         <tr>
         <td> {$coca->tipo_coca}</td>
-        <td> {$coca->id_stock}</td>
+        <td> {if $coca->envase === 1}Lata</td>
+        <td> {else $coca->envase === 2}1 Litro</td>
+        {/if}
         </tr>
     {/foreach}
     
