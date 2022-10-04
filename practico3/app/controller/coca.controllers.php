@@ -16,5 +16,7 @@ class CocaController {
     }
     public function showadminpage(){
         $this->view->logadmin(); 
+        header("Location: " . BASE_URL ."/admin"); 
+
     }
 }

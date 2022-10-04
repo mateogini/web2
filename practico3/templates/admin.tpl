@@ -7,5 +7,5 @@
     <label for="exampleInputPassword1" class="form-label">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1">
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
-</form>'
+  <button type="submit" class="btn btn-primary" href="admin.tpl">Login</button>
+</form>

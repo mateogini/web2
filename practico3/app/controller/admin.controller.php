@@ -21,11 +21,15 @@ class AdminController {
         $stock = $_POST['stock'];
       
         $id = $this->model->insertStock($tipo_coca, $envase, $stock);
-        header("Location: " . BASE_URL); 
+        header("Location: " . BASE_URL ."/admin"); 
 
     }
-    public function deleteStock($id) {
-        $this->model->deleteStockById($id);
+    public function deleteStock($id_stock) {
+        $this->model->deleteStockById($id_stock);
+
+        header("Location: " . BASE_URL ."/admin"); 
+
+
       }  
     
 }

@@ -18,10 +18,7 @@ class CocaModel{
     public  function insertStock($tipo_coca, $envase, $stock){
         $query= $this->db->prepare("INSERT INTO `pedidos`(`tipo_coca`, `envase`, `stock`) VALUES (?, ?, ?)");
         
-        $query->execute([$tipo_coca, $envase, $stock]);
-        
-        return $this->db->lastInsertId();
-        
+        $query->execute([$tipo_coca,$envase,$stock]);        
 
 
 }
