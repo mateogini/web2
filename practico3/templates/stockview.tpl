@@ -3,7 +3,7 @@
 <thead>
 <tr>
     <th scope='col'> Coca Cola </th>
-     <th scope='col'> Envasee</th>
+     <th scope='col'> Envase</th>
 </tr>
 </thead>
     {foreach from=$cocacola item=$coca}
@@ -14,5 +14,5 @@
         {/if}
         </tr>
     {/foreach}
-    
+
 </table>
