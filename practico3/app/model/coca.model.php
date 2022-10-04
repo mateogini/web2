@@ -15,12 +15,18 @@ class CocaModel{
         
         return $cocas;
     }
-    public  function insertPay($tipo_coca, $envases, $stock){
-        $query= this->$db->prepare("INSERT INTO `pedidos`(`tipo_coca`, `envases`, `stock`) VALUES (?, ?, ?)");
+    public  function insertStock($tipo_coca, $envase, $stock){
+        $query= $this->db->prepare("INSERT INTO `pedidos`(`tipo_coca`, `envase`, `stock`) VALUES (?, ?, ?)");
         
-        $query->execute([$tipo_coca, $envases, $stock]);
+        $query->execute([$tipo_coca, $envase, $stock]);
         
-        return $this->$db->lastInsertId();
+        return $this->db->lastInsertId();
+        
+
 
 }
+    public function deleteStockById($id_stock){
+        $query = $this->db->prepare('DELETE FROM pedidos WHERE id_stock = ?'); //Elimino segun id 
+        $query->execute([$id_stock]);
+    }
 }

@@ -12,5 +12,20 @@ class AdminController {
     public function showStock() {
         $cocacola = $this->model->getAllCocas();
         $this->view->showStock($cocacola);
+
     }
+    public function addStock(){ //añadir un nuevo stock
+
+        $tipo_coca = $_POST['tipo_coca'];
+        $envase = $_POST['envase'];
+        $stock = $_POST['stock'];
+      
+        $id = $this->model->insertStock($tipo_coca, $envase, $stock);
+        header("Location: " . BASE_URL); 
+
+    }
+    public function deleteStock($id) {
+        $this->model->deleteStockById($id);
+      }  
+    
 }

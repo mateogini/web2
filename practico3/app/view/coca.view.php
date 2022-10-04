@@ -9,7 +9,6 @@ class CocaView{
     }
     function showCocas($cocacola){ 
     $this->smarty->assign('cocacola', $cocacola);
-
     // mostrar el tpl
     $this->smarty->display('stockview.tpl');
 
