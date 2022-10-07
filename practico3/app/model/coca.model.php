@@ -26,4 +26,10 @@ class CocaModel{
         $query = $this->db->prepare('DELETE FROM pedidos WHERE id_stock = ?'); //Elimino segun id 
         $query->execute([$id_stock]);
     }
+    public function getProduct($id_stock){
+        $query = $this->db->prepare("SELECT * FROM pedidos WHERE id_stock=?");
+        $query->execute(array($id_stock));
+        $cocacolas = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        return $cocacolas;
+    }
 }

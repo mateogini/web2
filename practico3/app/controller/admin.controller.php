@@ -27,7 +27,7 @@ class AdminController {
     public function deleteStock($id_stock) {
         $this->model->deleteStockById($id_stock);
 
-        header("Location: " . BASE_URL ."/admin"); 
+        header("Location: " . BASE_URL ."admin"); 
 
 
       }  

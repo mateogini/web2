@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-05 00:18:08
+/* Smarty version 4.2.1, created on 2022-10-07 03:27:46
   from 'C:\xampp\htdocs\web2\practico3\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633cb12027a121_94963512',
+  'unifunc' => 'content_633f809221fc60_48710159',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffb0a62146e09e75ec1b0ce6064574e28eca57c6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\header.tpl',
-      1 => 1664921886,
+      1 => 1665106062,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633cb12027a121_94963512 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633f809221fc60_48710159 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +45,8 @@ function content_633cb12027a121_94963512 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="home">Home</a>
+          <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
+/home">Home</a>
         </li>
       </ul>
     </div>
@@ -54,7 +55,10 @@ function content_633cb12027a121_94963512 (Smarty_Internal_Template $_smarty_tpl)
 </nav>
     </header>
     <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"><?php echo '</script'; ?>
+ src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"><?php echo '</script'; ?>
 >
-<?php }
+    <?php echo '<script'; ?>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"><?php echo '</script'; ?>
+>
+    </body><?php }
 }

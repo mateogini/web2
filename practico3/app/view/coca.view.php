@@ -24,4 +24,9 @@ class CocaView{
     $this->smarty->display('admin.tpl');
 
     }
+    function showProduct($cocacolas){
+      $this->smarty->assign('cocacolas', $cocacolas);
+
+      $this->smarty->display('detail.tpl');
+    }
   }

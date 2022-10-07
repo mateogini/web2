@@ -16,7 +16,9 @@ class CocaController {
     }
     public function showadminpage(){
         $this->view->logadmin(); 
-        header("Location: " . BASE_URL ."/admin"); 
-
     }
+    public function showProduct($id_stock) {
+        $productSelected= $this->model->getProduct($id_stock);
+        $this->view->showProduct($productSelected);
+}
 }

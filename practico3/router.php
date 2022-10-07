@@ -28,6 +28,10 @@ switch($params[0]) {
     case 'login':
         $cocaController->showadminpage();
         break;
+    case 'detalle':
+        $id_stock= $params[1];
+        $cocaController->showProduct($id_stock);
+        break;
     case 'delete':
         $id_stock = $params[1];
         $adminController->deleteStock($id_stock);
