@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 03:27:46
+/* Smarty version 4.2.1, created on 2022-10-07 03:29:48
   from 'C:\xampp\htdocs\web2\practico3\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633f809221fc60_48710159',
+  'unifunc' => 'content_633f810c06ae29_75441884',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffb0a62146e09e75ec1b0ce6064574e28eca57c6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\header.tpl',
-      1 => 1665106062,
+      1 => 1665106186,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633f809221fc60_48710159 (Smarty_Internal_Template $_smarty_tpl) {
+function content_633f810c06ae29_75441884 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +38,8 @@ function content_633f809221fc60_48710159 (Smarty_Internal_Template $_smarty_tpl)
     <header>
     <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="home">Coca Cola Distribuidor</a>
+    <a class="navbar-brand" href="<?php echo BASE_URL;?>
+/home">Coca Cola Distribuidor</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

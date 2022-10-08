@@ -29,4 +29,8 @@ class CocaView{
 
       $this->smarty->display('detail.tpl');
     }
+    function EditStock($cocacolas){
+      $this->smarty->assign('cocacolas', $cocacolas);
+      $this->smarty->display('formEdit.tpl');
+    }
   }

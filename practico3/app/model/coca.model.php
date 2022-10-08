@@ -28,8 +28,12 @@ class CocaModel{
     }
     public function getProduct($id_stock){
         $query = $this->db->prepare("SELECT * FROM pedidos WHERE id_stock=?");
-        $query->execute(array($id_stock));
+        $query->execute([$id_stock]);
         $cocacolas = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         return $cocacolas;
+    }
+    public function EditStockById($id_stock){
+        $query = $this->db->prepare("UPDATE `pedidos` SET `id_stock`='?',`tipo_coca`=' ? ',`envase`='?',`stock`='?' WHERE 1");
+         return $query->execute([$id_stock]);
     }
 }
