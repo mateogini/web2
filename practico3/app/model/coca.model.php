@@ -33,7 +33,9 @@ class CocaModel{
         return $cocacolas;
     }
     public function EditStockById($id_stock){
-        $query = $this->db->prepare("UPDATE `pedidos` SET `id_stock`='?',`tipo_coca`=' ? ',`envase`='?',`stock`='?' WHERE 1");
-         return $query->execute([$id_stock]);
-    }
+        $query = $this->db->prepare("UPDATE `pedidos` SET `id_stock`='?',`tipo_coca`=' ? ',`envase`='?',`stock`='?' WHERE 'id_stock' = '?' ");
+         $query->execute([$id_stock]);
+         return $query->fetch(PDO::FETCH_OBJ);
+        }
+
 }

@@ -13,6 +13,8 @@ if (!empty($_GET['action'])) {
 $params = explode('/', $action); // genera un arreglo  
 
 $cocaController = new cocaController();
+$adminController = new adminController();
+
 
 switch($params[0]) {
     case 'home':
@@ -24,8 +26,8 @@ switch($params[0]) {
     case 'add':
         $cocaController->addStock();
         break;
-    case 'login':
-        $cocaController->showadminpage();
+    case 'login': // muestra form para loguearse
+        $adminController->showadminpage();
         break;
     case 'detalle':
         $id_stock= $params[1];
@@ -38,6 +40,9 @@ switch($params[0]) {
     case 'edit':
         $id_stock = $params[1];
         $cocaController->EditStock($id_stock);
+        break;
+    case 'validate':
+        $adminController->validateUser();
         break;
     default:
         echo "404 not found";

@@ -1,6 +1,15 @@
 {include file="header.tpl"}
 {include file="footer.tpl"}
-
+<div>
+    <p class="fw-bold"> Listado de Categorias: </p>
+    <table class="table">  
+            {foreach from=$tipos item=$tipo}
+            <tr>
+              <td value="{$tipo->id_envase}">{$tipo->id_envase}</td>
+            </td>
+            {{/foreach}} 
+    </table>   
+</div>
 <table class="table">
 <thead>
 <tr>
@@ -13,12 +22,11 @@
         <tr>
         <td> {$coca->tipo_coca}</td>
         <td> {if $coca->envase === 1}Lata
-        {else $coca->envase === 2}1 Litro</td>
+        {elseif $coca->envase === 2}1 Litro</td>
+        {else $coca->envase === 3}3 Litro</td>
         {/if}
         <td><a href="detalle/{$coca->id_stock}" type="button" class="btn btn-outline-dark"{$coca->id_stock}>Detalle</td> </a>
         </tr> 
     {/foreach}
-    
-
 
 </table>

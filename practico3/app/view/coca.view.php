@@ -20,17 +20,22 @@ class CocaView{
       $this->smarty->display('stockviewAdmin.tpl');
       }
   
-    function logadmin(){
-    $this->smarty->display('admin.tpl');
-
-    }
+    
     function showProduct($cocacolas){
       $this->smarty->assign('cocacolas', $cocacolas);
 
       $this->smarty->display('detail.tpl');
     }
-    function EditStock($cocacolas){
-      $this->smarty->assign('cocacolas', $cocacolas);
+    function EditStock($cocacola){
+      $this->smarty->display('cocacola', $cocacolas);
+
       $this->smarty->display('formEdit.tpl');
+
     }
-  }
+  
+  function showEnvase($tipos){
+    $this->smarty->assign('tipos',$tipos);
+    $this->smarty->display('templates/stockview.tpl');
+}
+
+}

@@ -19,6 +19,6 @@
   <option value="2"  name="envase">1 Litro</option>
   <option value="3"  name="envase">3 litros</option>
 <input type="text" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" href="edit/{$cocacolas->$id_stock}"  class="btn btn-outline-primary"> Editar</button>
+  <button type="submit" href="edit/{$cocacola->$id_stock}"  class="btn btn-outline-primary"> Editar</button>
 </div>
   </form>

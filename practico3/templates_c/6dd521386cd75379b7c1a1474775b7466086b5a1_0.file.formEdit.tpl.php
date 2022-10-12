@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-08 22:48:24
+/* Smarty version 4.2.1, created on 2022-10-13 00:43:53
   from 'C:\xampp\htdocs\web2\practico3\templates\formEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6341e218af3980_63822781',
+  'unifunc' => 'content_63474329df5437_27424630',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dd521386cd75379b7c1a1474775b7466086b5a1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\formEdit.tpl',
-      1 => 1665261627,
+      1 => 1665614632,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6341e218af3980_63822781 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63474329df5437_27424630 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<form action="add" method= "POST">
+<form action="edit" method= "POST">
    <div class="mb-3">
   <select class="form-select" maria-label="Default select example" name="tipo_coca">
     <option selected>Elegí tu Coca Cola</option>
@@ -45,8 +45,7 @@ $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_sm
   <option value="2"  name="envase">1 Litro</option>
   <option value="3"  name="envase">3 litros</option>
 <input type="text" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" href="edit/<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->{$_smarty_tpl->tpl_vars['id_stock']->value};?>
-"  class="btn btn-outline-primary"> Editar</button>
+  <button type="submit" href="edit"  class="btn btn-outline-primary"> Editar</button>
 </div>
   </form><?php }
 }
