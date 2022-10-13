@@ -32,7 +32,9 @@ class CocaController {
     public function showCocas() {
 
         $cocacola = $this->model->getAllCocas();
-        $this->view->showCocas($cocacola);
+        $tipos = $this->model_type->getType();
+    $this->view->showCocas($cocacola,$tipos);
+
     }
    
     // muestra por detalle el producto seleccionado
@@ -73,10 +75,10 @@ class CocaController {
         $this->view->EditStock($cocacola);
     
 }
- public function showFilter() {
-    $tipos = $this->model_type->getType();
-    $this->view_type->showType($tipos);
-} 
+ //public function showFilter() {
+    //$tipos = $this->model_type->getType();
+   // $this->view_type->showType($tipos);
+//} 
 public function checkLoggedIn() {
     if (!isset($_SESSION['IS_LOGGED'])) {
         header("Location: " . BASE_URL . '/login');

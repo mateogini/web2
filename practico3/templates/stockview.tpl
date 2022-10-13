@@ -16,7 +16,7 @@
     <select class="form-select" name="type_option">
         <option selected>ver todas</option>
         {foreach from=$tipos item=$tipo}
-            <option value="{$tipo->id_envase}">{$tipo->tipo}</option>
+            <option value="{$tipo->id_envase}">{$tipo->envase}</option>
         {/foreach}    
     </select>
 </div>

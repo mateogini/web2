@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 17:35:31
+/* Smarty version 4.2.1, created on 2022-10-13 23:46:57
   from 'C:\xampp\htdocs\web2\practico3\templates\stockview.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634830435c5c56_61980098',
+  'unifunc' => 'content_6348875129c9a2_56895695',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b9af552eacef99a2c8cd40093379c8d3248aaf79' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\stockview.tpl',
-      1 => 1665674681,
+      1 => 1665697218,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634830435c5c56_61980098 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6348875129c9a2_56895695 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -60,7 +60,7 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['tipo']->value) {
 $_smarty_tpl->tpl_vars['tipo']->do_else = false;
 ?>
             <option value="<?php echo $_smarty_tpl->tpl_vars['tipo']->value->id_envase;?>
-"><?php echo $_smarty_tpl->tpl_vars['tipo']->value->tipo;?>
+"><?php echo $_smarty_tpl->tpl_vars['tipo']->value->envase;?>
 </option>
         <?php
 }

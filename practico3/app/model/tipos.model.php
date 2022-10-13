@@ -12,6 +12,5 @@ class TiposModel{
         $tipos = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         
         return $tipos;
-        var_dump($tipo);
     }
 }
