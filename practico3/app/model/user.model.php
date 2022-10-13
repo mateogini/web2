@@ -10,8 +10,8 @@
     }
 
     public function getUser($email){
-        $query = $this->db->prepare("SELECT * FROM 'login' WHERE email = ?");
+        $query = $this->db->prepare("SELECT * FROM login WHERE email = ?");
         $query->execute([$email]);
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetch(PDO::FETCH_OBJ);
     }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 00:21:15
+/* Smarty version 4.2.1, created on 2022-10-13 17:35:31
   from 'C:\xampp\htdocs\web2\practico3\templates\stockview.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63473ddbcfd0c1_49373022',
+  'unifunc' => 'content_634830435c5c56_61980098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b9af552eacef99a2c8cd40093379c8d3248aaf79' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\stockview.tpl',
-      1 => 1665613273,
+      1 => 1665674681,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63473ddbcfd0c1_49373022 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634830435c5c56_61980098 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div>
     <p class="fw-bold"> Listado de Categorias: </p>
     <table class="table">  
-            <?php
+     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tipos']->value, 'tipo');
 $_smarty_tpl->tpl_vars['tipo']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['tipo']->value) {
@@ -37,7 +37,7 @@ $_smarty_tpl->tpl_vars['tipo']->do_else = false;
 ?>
             <tr>
               <td value="<?php echo $_smarty_tpl->tpl_vars['tipo']->value->id_envase;?>
-"><?php echo $_smarty_tpl->tpl_vars['tipo']->value->id_envase;?>
+"><?php echo $_smarty_tpl->tpl_vars['tipo']->value->envase;?>
 </td>
             </td>
             <?php ob_start();
@@ -47,6 +47,25 @@ $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
  
     </table>   
+</div>   
+
+<div>
+    <p class="fw-bold">Filtrar por:</p>
+    <select class="form-select" name="type_option">
+        <option selected>ver todas</option>
+        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tipos']->value, 'tipo');
+$_smarty_tpl->tpl_vars['tipo']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['tipo']->value) {
+$_smarty_tpl->tpl_vars['tipo']->do_else = false;
+?>
+            <option value="<?php echo $_smarty_tpl->tpl_vars['tipo']->value->id_envase;?>
+"><?php echo $_smarty_tpl->tpl_vars['tipo']->value->tipo;?>
+</option>
+        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>    
+    </select>
 </div>
 <table class="table">
 <thead>

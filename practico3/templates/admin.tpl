@@ -1,14 +1,17 @@
 {include file="header.tpl"}
- <form method="POST" action="validate">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Log In</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@gmail.com" name="email">
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-  </div>
-  <a> <button type="submit" class="btn btn-primary">Login</button> </a>
+<form method="POST" action="validate">
+<div class="mb-3">
+    <label for="email" class="form-label">Email </label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+</div>
+<div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="password">
+</div>
+<button type="submit" class="btn btn-outline-secondary">INGRESAR</button>
+{if $error}
     <div class= "alert alert-danger mt-3">
-                {$error}
-            </div>
+        {$error}
+    </div>
+{/if}    
 </form>

@@ -33,9 +33,7 @@ class CocaView{
 
     }
   
-  function showEnvase($tipos){
-    $this->smarty->assign('tipos',$tipos);
-    $this->smarty->display('templates/stockview.tpl');
+   
 }
 
-}
+

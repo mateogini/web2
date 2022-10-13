@@ -22,10 +22,20 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{BASE_URL}/home">Home</a>
         </li>
+        {if !isset({$smarty.session.USER_EMAIL})}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{BASE_URL}/admin" >Admin </a>
+          </li>
+        {/if}
+
       </ul>
     </div>
   </div>
-  <a button type="button" class="btn btn-primary btn-sm"  href="login">Login</button> </a>
+  {if !isset($smarty.session.USER_ID)}
+    <a button type="button" class="btn btn-primary btn-sm"  href="login">Login</button> </a>
+  {else} 
+      <a button type="button" class="btn btn-primary btn-sm"  href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
+  {/if}
 </nav>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

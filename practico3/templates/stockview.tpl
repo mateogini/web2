@@ -3,12 +3,22 @@
 <div>
     <p class="fw-bold"> Listado de Categorias: </p>
     <table class="table">  
-            {foreach from=$tipos item=$tipo}
+     {foreach from=$tipos item=$tipo}
             <tr>
-              <td value="{$tipo->id_envase}">{$tipo->id_envase}</td>
+              <td value="{$tipo->id_envase}">{$tipo->envase}</td>
             </td>
             {{/foreach}} 
     </table>   
+</div>   
+
+<div>
+    <p class="fw-bold">Filtrar por:</p>
+    <select class="form-select" name="type_option">
+        <option selected>ver todas</option>
+        {foreach from=$tipos item=$tipo}
+            <option value="{$tipo->id_envase}">{$tipo->tipo}</option>
+        {/foreach}    
+    </select>
 </div>
 <table class="table">
 <thead>

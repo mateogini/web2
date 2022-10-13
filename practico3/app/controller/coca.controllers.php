@@ -2,18 +2,33 @@
 require_once './app/model/coca.model.php';
 require_once './app/view/coca.view.php';
 require_once './app/model/tipos.model.php';
+require_once './app/view/filterView.php';
+//require_once './helpers/AuthHelper.php';
+
+
 
 class CocaController {
     private $model;
     private $view;
+    private $model_type;
+    private $view_type;
+    // private $authHelper;
+
 
     public function __construct() {
         $this->model = new CocaModel();
         $this->view = new CocaView();
-        $this->model_tipo = new TiposModel();
+        $this->view_type = new FilterView();
+        $this->model_type = new TiposModel();
+        } 
+    //$authHelper = new AuthHelper();
+    //$authHelper->checkLoggedIn();
+   
 
-    }
    // Muestra la tabla de stock
+
+
+   
     public function showCocas() {
 
         $cocacola = $this->model->getAllCocas();
@@ -27,7 +42,7 @@ class CocaController {
     }
     // muestra la tabla con los botones de abm
     public function showStock() {
-
+        $this->checkLoggedIn();
 
         $cocacola = $this->model->getAllCocas();
 
@@ -35,7 +50,7 @@ class CocaController {
 
     }
     public function addStock(){ //añadir un nuevo stock
-
+        $this->checkLoggedIn();
 
         $tipo_coca = $_POST['tipo_coca'];
         $envase = $_POST['envase'];
@@ -46,10 +61,11 @@ class CocaController {
 
     } // elimina el stock seleccionado
     public function deleteStock($id_stock) {
+        $this->checkLoggedIn();
 
         $this->model->deleteStockById($id_stock);
 
-        header("Location: " . BASE_URL ."admin"); 
+        header("Location: " . BASE_URL ."/admin"); 
       }  
       public function EditStock($id_stock){
 
@@ -58,14 +74,14 @@ class CocaController {
     
 }
  public function showFilter() {
-    $tipos = $this->model_tipo->getEnvase($tipos);
-    $this->view->showEnvase($tipos);
+    $tipos = $this->model_type->getType();
+    $this->view_type->showType($tipos);
 } 
-}
-
- /*public function checkLoggedIn() {
+public function checkLoggedIn() {
     if (!isset($_SESSION['IS_LOGGED'])) {
-        header("Location: " . BASE_URL);
+        header("Location: " . BASE_URL . '/login');
         die();
     }
-}*/ 
+} 
+
+}

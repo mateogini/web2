@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 03:29:48
+/* Smarty version 4.2.1, created on 2022-10-13 18:35:15
   from 'C:\xampp\htdocs\web2\practico3\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_633f810c06ae29_75441884',
+  'unifunc' => 'content_63483e43308678_21535950',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffb0a62146e09e75ec1b0ce6064574e28eca57c6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\header.tpl',
-      1 => 1665106186,
+      1 => 1665678911,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_633f810c06ae29_75441884 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63483e43308678_21535950 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,10 +49,25 @@ function content_633f810c06ae29_75441884 (Smarty_Internal_Template $_smarty_tpl)
           <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
 /home">Home</a>
         </li>
+        <?php ob_start();
+echo $_SESSION['USER_EMAIL'];
+$_prefixVariable1 = ob_get_clean();
+if (!(isset($_prefixVariable1))) {?>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
+/admin" >Admin </a>
+          </li>
+        <?php }?>
+
       </ul>
     </div>
   </div>
-  <a button type="button" class="btn btn-primary btn-sm"  href="login">Login</button> </a>
+  <?php if (!(isset($_SESSION['USER_ID']))) {?>
+    <a button type="button" class="btn btn-primary btn-sm"  href="login">Login</button> </a>
+  <?php } else { ?> 
+      <a button type="button" class="btn btn-primary btn-sm"  href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
+)</a>
+  <?php }?>
 </nav>
     </header>
     <?php echo '<script'; ?>

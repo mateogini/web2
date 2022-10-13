@@ -6,6 +6,8 @@ class CocaModel{
     public function __construct() {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_stock;charset=utf8', 'root', '');
     }
+    
+
 
     public function getAllCocas(){
         $query = $this->db->prepare("SELECT * FROM pedidos");

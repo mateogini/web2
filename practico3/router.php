@@ -3,6 +3,7 @@ require_once "./app/controller/coca.controllers.php";
 require_once "./app/controller/admin.controller.php";
 
 
+
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'');
 
 // leo el parametro accion
@@ -44,6 +45,8 @@ switch($params[0]) {
     case 'validate':
         $adminController->validateUser();
         break;
+    case 'logout':
+        $adminController->Logout();
     default:
         echo "404 not found";
         break;
