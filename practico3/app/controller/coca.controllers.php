@@ -73,7 +73,9 @@ class CocaController {
             $stock = $_POST['stock'];
 
             $this->model->EditStock($tipo_coca,$envase,$stock,$id_stock);
-            header("Location: " . BASE_URL. " " ); 
+        header("Location: " . BASE_URL. "/home" ); 
+        var_dump($tipo_coca,$envase,$stock,$id_stock);
+        die();
         }
     
 public function checkLoggedIn() {
