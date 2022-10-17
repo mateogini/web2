@@ -1,9 +1,8 @@
 {include file="header.tpl"}
-{include file="footer.tpl"}
-<form action="edit" method= "POST">
+  <form action="edit" method= "POST">
    <div class="mb-3">
-  <select class="form-select" maria-label="Default select example" name="tipo_coca">
-    <option selected>Elegí tu Coca Cola</option>
+   <input type="hidden" value="{$cocacolas->id_stock}" name="id_stock">
+  <select class="form-select" maria-label="Default select example" value="{$cocacolas->tipo_coca}" name="tipo_coca">
     <option value="Sabor Original" name="tipo_coca">Sabor Original</option>
     <option value="Light"  name="tipo_coca">Light</option>
     <option value="Zero Azucar"  name="tipo_coca">Zero azúcar</option>
@@ -13,12 +12,12 @@
     <option value="Energy Not Azucar"  name="tipo_coca">Energy sin azúcares</option>
     <option value="Energy Cherry"  name="tipo_coca">Energy Cherry</option>
   </select>
-<select class="form-select" maria-label="Default select example" name="envase">
-  <option selected>Elegi tu envase</option>
-  <option value="1" name="envase">Lata</option>
-  <option value="2"  name="envase">1 Litro</option>
-  <option value="3"  name="envase">3 litros</option>
-<input type="text" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" href="edit/{$cocacola->$id_stock}"  class="btn btn-outline-primary"> Editar</button>
+<select class="form-select" value="{$cocacolas->envase}" maria-label="Default select example" name="envase">
+  {foreach from=$tipo item=$tipos}
+    <option value="{$tipos->id_envase}" name="envase">{$tipos->envase_name}</option>
+  {/foreach}
+<input type="text"  value="{$cocacolas->stock}" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
+  <button type="submit" class="btn btn-outline-primary">Editar</button>
 </div>
   </form>
+  {include file="footer.tpl"}

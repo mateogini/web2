@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 00:43:53
+/* Smarty version 4.2.1, created on 2022-10-17 22:36:44
   from 'C:\xampp\htdocs\web2\practico3\templates\formEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63474329df5437_27424630',
+  'unifunc' => 'content_634dbcdcdc4d33_62052551',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dd521386cd75379b7c1a1474775b7466086b5a1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\formEdit.tpl',
-      1 => 1665614632,
+      1 => 1666039002,
       2 => 'file',
     ),
   ),
@@ -22,14 +22,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63474329df5437_27424630 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634dbcdcdc4d33_62052551 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<form action="edit" method= "POST">
+  <form action="edit" method= "POST">
    <div class="mb-3">
-  <select class="form-select" maria-label="Default select example" name="tipo_coca">
-    <option selected>Elegí tu Coca Cola</option>
+   <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->id_stock;?>
+" name="id_stock">
+  <select class="form-select" maria-label="Default select example" value="<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->tipo_coca;?>
+" name="tipo_coca">
     <option value="Sabor Original" name="tipo_coca">Sabor Original</option>
     <option value="Light"  name="tipo_coca">Light</option>
     <option value="Zero Azucar"  name="tipo_coca">Zero azúcar</option>
@@ -39,13 +40,25 @@ $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_sm
     <option value="Energy Not Azucar"  name="tipo_coca">Energy sin azúcares</option>
     <option value="Energy Cherry"  name="tipo_coca">Energy Cherry</option>
   </select>
-<select class="form-select" maria-label="Default select example" name="envase">
-  <option selected>Elegi tu envase</option>
-  <option value="1" name="envase">Lata</option>
-  <option value="2"  name="envase">1 Litro</option>
-  <option value="3"  name="envase">3 litros</option>
-<input type="text" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" href="edit"  class="btn btn-outline-primary"> Editar</button>
+<select class="form-select" value="<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->envase;?>
+" maria-label="Default select example" name="envase">
+  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tipo']->value, 'tipos');
+$_smarty_tpl->tpl_vars['tipos']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['tipos']->value) {
+$_smarty_tpl->tpl_vars['tipos']->do_else = false;
+?>
+    <option value="<?php echo $_smarty_tpl->tpl_vars['tipos']->value->id_envase;?>
+" name="envase"><?php echo $_smarty_tpl->tpl_vars['tipos']->value->envase_name;?>
+</option>
+  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+<input type="text"  value="<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->stock;?>
+" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
+  <button type="submit" class="btn btn-outline-primary">Editar</button>
 </div>
-  </form><?php }
+  </form>
+  <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

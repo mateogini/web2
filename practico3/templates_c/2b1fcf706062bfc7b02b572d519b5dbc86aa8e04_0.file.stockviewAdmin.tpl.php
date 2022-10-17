@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 00:34:09
+/* Smarty version 4.2.1, created on 2022-10-17 00:41:44
   from 'C:\xampp\htdocs\web2\practico3\templates\stockviewAdmin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634740e1297491_64651687',
+  'unifunc' => 'content_634c88a886e880_14904557',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2b1fcf706062bfc7b02b572d519b5dbc86aa8e04' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\stockviewAdmin.tpl',
-      1 => 1665614047,
+      1 => 1665960074,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:form.tpl' => 1,
   ),
 ),false)) {
-function content_634740e1297491_64651687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634c88a886e880_14904557 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -49,12 +49,12 @@ $_smarty_tpl->tpl_vars['coca']->do_else = false;
         <?php } elseif ($_smarty_tpl->tpl_vars['coca']->value->envase === 2) {?>1 Litro</td>
          <?php } else { ?>3 Litros</td>
         <?php }?>
+        
         <td><a href="delete/<?php echo $_smarty_tpl->tpl_vars['coca']->value->id_stock;?>
 " type="button" class="btn btn-outline-danger"<?php echo $_smarty_tpl->tpl_vars['coca']->value->id_stock;?>
 >Borrar </td> </a>
-        <td><a href="edit/<?php echo $_smarty_tpl->tpl_vars['coca']->value->id_stock;?>
-" type="button" class="btn btn-info"<?php echo $_smarty_tpl->tpl_vars['coca']->value->id_stock;?>
->Editar</td> </a>
+        <td><a href="formedit/<?php echo $_smarty_tpl->tpl_vars['coca']->value->id_stock;?>
+" type="button" class="btn btn-info">Editar</td> </a>
         </tr>
     <?php
 }

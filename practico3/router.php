@@ -1,6 +1,8 @@
 <?php
 require_once "./app/controller/coca.controllers.php";
 require_once "./app/controller/admin.controller.php";
+require_once './app/controller/type.controller.php';
+
 
 
 
@@ -15,14 +17,11 @@ $params = explode('/', $action); // genera un arreglo
 
 $cocaController = new cocaController();
 $adminController = new adminController();
-
+$typeController = new typeController();
 
 switch($params[0]) {
     case 'home':
-        $cocaController->showCocas();
-        break;
-    case 'admin':
-        $cocaController->showStock();
+        $cocaController->showCoca();
         break;
     case 'add':
         $cocaController->addStock();
@@ -38,15 +37,35 @@ switch($params[0]) {
         $id_stock = $params[1];
         $cocaController->deleteStock($id_stock);
         break;
+    case 'formedit':
+            $id_stock = $params[1];
+            $cocaController->showFormEdit($id_stock);
+            break;
     case 'edit':
-        $id_stock = $params[1];
-        $cocaController->EditStock($id_stock);
+        $cocaController->EditStock();
         break;
     case 'validate':
         $adminController->validateUser();
         break;
     case 'logout':
         $adminController->Logout();
+    break;
+    case 'list':
+        $id_stock= $params[1];
+        $typeController->showCategory($id_stock);
+        break;
+
+    case 'deletecat':
+        $id_envase = $params[1];
+        $typeController->DeleteCategory($id_envase);
+        break;
+    case 'addcategory':
+        $typeController->addCategory();  
+        break;
+    case 'editarcat':
+        $TypesController = new TypesController();
+        $TypesController->ShowFormEditCat();  
+        break;
     default:
         echo "404 not found";
         break;

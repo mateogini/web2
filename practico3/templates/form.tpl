@@ -1,3 +1,4 @@
+{include file="header.tpl"}
 <form action="add" method= "POST">
    <div class="mb-3">
   <select class="form-select" maria-label="Default select example" name="tipo_coca">
@@ -13,10 +14,10 @@
   </select>
 <select class="form-select" maria-label="Default select example" name="envase">
   <option selected>Elegi tu envase</option>
-  <option value="1" name="envase">Lata</option>
-  <option value="2"  name="envase">1 Litro</option>
-  <option value="3"  name="envase">3 litros</option>
+  {foreach from=$tipos item=$tipo}
+  <option value="{$tipo->id_envase}" name="envase">{$tipo->envase_name}</option>
+{/foreach}
 <input type="text" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" class="btn btn-outline-primary"> Enviar </button>
+  <button type="submit" class="btn btn-outline-primary">Añadir</button>
 </div>
   </form>

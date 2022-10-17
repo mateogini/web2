@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-13 18:35:15
+/* Smarty version 4.2.1, created on 2022-10-17 03:46:11
   from 'C:\xampp\htdocs\web2\practico3\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63483e43308678_21535950',
+  'unifunc' => 'content_634cb3e3410973_25247790',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffb0a62146e09e75ec1b0ce6064574e28eca57c6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\header.tpl',
-      1 => 1665678911,
+      1 => 1665971169,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63483e43308678_21535950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634cb3e3410973_25247790 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,16 +49,16 @@ function content_63483e43308678_21535950 (Smarty_Internal_Template $_smarty_tpl)
           <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
 /home">Home</a>
         </li>
-        <?php ob_start();
-echo $_SESSION['USER_EMAIL'];
-$_prefixVariable1 = ob_get_clean();
-if (!(isset($_prefixVariable1))) {?>
+        <?php if ((isset($_SESSION['USER_EMAIL']))) {?>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
-/admin" >Admin </a>
+/addcategory">Añadir Categoria</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?php echo BASE_URL;?>
+/add">Añadir Producto</a>
+        </li>
         <?php }?>
-
       </ul>
     </div>
   </div>
@@ -70,11 +70,5 @@ if (!(isset($_prefixVariable1))) {?>
   <?php }?>
 </nav>
     </header>
-    <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"><?php echo '</script'; ?>
->
     </body><?php }
 }

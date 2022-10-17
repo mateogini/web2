@@ -7,8 +7,6 @@ class CocaModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_stock;charset=utf8', 'root', '');
     }
     
-
-
     public function getAllCocas(){
         $query = $this->db->prepare("SELECT * FROM pedidos");
         $query->execute();
@@ -31,13 +29,12 @@ class CocaModel{
     public function getProduct($id_stock){
         $query = $this->db->prepare("SELECT * FROM pedidos WHERE id_stock=?");
         $query->execute([$id_stock]);
-        $cocacolas = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        $cocacolas = $query->fetch(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         return $cocacolas;
-    }
-    public function EditStockById($id_stock){
-        $query = $this->db->prepare("UPDATE `pedidos` SET `id_stock`='?',`tipo_coca`=' ? ',`envase`='?',`stock`='?' WHERE 'id_stock' = '?' ");
-         $query->execute([$id_stock]);
-         return $query->fetch(PDO::FETCH_OBJ);
+    } // falta pasar id en update.
+    public function EditStock($tipo_coca,$envase,$stock,$id_stock){
+        $query = $this->db->prepare("UPDATE `pedidos` SET `tipo_coca`=' ? ',`envase`='?',`stock`='?' WHERE 'id_stock' = '?' ");
+         $query->execute([$tipo_coca,$envase,$stock,$id_stock]);
         }
 
 }

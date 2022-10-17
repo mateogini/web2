@@ -22,12 +22,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{BASE_URL}/home">Home</a>
         </li>
-        {if !isset({$smarty.session.USER_EMAIL})}
+        {if isset($smarty.session.USER_EMAIL)}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{BASE_URL}/admin" >Admin </a>
+          <a class="nav-link active" aria-current="page" href="{BASE_URL}/addcategory">Añadir Categoria</a>
           </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{BASE_URL}/add">Añadir Producto</a>
+        </li>
         {/if}
-
       </ul>
     </div>
   </div>
@@ -38,6 +40,4 @@
   {/if}
 </nav>
     </header>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     </body>
