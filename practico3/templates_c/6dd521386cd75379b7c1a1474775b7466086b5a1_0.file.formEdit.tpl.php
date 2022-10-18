@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 22:53:51
+/* Smarty version 4.2.1, created on 2022-10-17 23:48:33
   from 'C:\xampp\htdocs\web2\practico3\templates\formEdit.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634dc0dfc91d77_86024580',
+  'unifunc' => 'content_634dcdb1468136_79410161',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6dd521386cd75379b7c1a1474775b7466086b5a1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\formEdit.tpl',
-      1 => 1666040030,
+      1 => 1666043311,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634dc0dfc91d77_86024580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634dcdb1468136_79410161 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-  <form action="edit" method= "POST">
+  <form action="<?php echo BASE_URL;?>
+/edit" method= "POST">
    <div class="mb-3">
    <input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['cocacolas']->value->id_stock;?>
 " name="id_stock">

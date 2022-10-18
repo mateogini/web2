@@ -21,3 +21,4 @@
   <button type="submit" class="btn btn-outline-primary">Añadir</button>
 </div>
   </form>
+  {include file="footer.tpl"}

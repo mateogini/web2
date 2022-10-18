@@ -29,14 +29,33 @@ class TypeController {
         } // elimina el stock seleccionado
         public function DeleteCategory($id_envase) {
             $this->checkLoggedIn();
-            $this->model->deleteCat($id_envase);
-    
-            header("Location: " . BASE_URL .""); 
+            $cocas = $this->model->getCategory($id_envase);
+            if(count($cocas)>0){
+                $this->view->viewError("Imposible eliminar categoria, un item pertenece a esta.");
+            }
+            else{
+                $this->model->deleteCat($id_envase);
+                header("Location: " . BASE_URL );
+            }
+            
           }  
           public function checkLoggedIn() {
             if (!isset($_SESSION['IS_LOGGED'])) {
                 header("Location: " . BASE_URL . '/login');
                 die();
             }
+        }
+            public function showFormEditCat($id_envase){
+                $this->checkLoggedIn();
+                $tipos= $this->model->getID($id_envase);
+                $this->view->showFormEditCat($tipos);
+            }
+            public function EditCat(){
+                $this->checkLoggedIn();
+                $id_envase = $_POST['id_envase'];
+                $envase_name = $_POST['envase_name'];
+                $this->model->EditCat($envase_name, $id_envase);
+                header("Location: " . BASE_URL);
+            }
         } 
-    }
+    

@@ -32,7 +32,6 @@ class CocaController {
         $productSelected= $this->model->getProduct($id_stock);
         $this->view->showProduct($productSelected);
     }
-    // muestra la tabla con los botones de abm
 
     public function addStock(){ //añadir un nuevo stock
         $this->checkLoggedIn();
@@ -57,11 +56,10 @@ class CocaController {
         header("Location: " . BASE_URL .""); 
       } 
       public function showFormEdit($id_stock){
-        $cocacolas= $this->model->getProduct($id_stock);
+        $this->checkLoggedIn();
+        $cocacolas= $this->model->getID($id_stock);
         $tipo = $this->model_type->getEnvase();  
         $this->view->showFormEdit($tipo, $cocacolas);
-
-
       }
 
      public function EditStock(){
@@ -73,9 +71,7 @@ class CocaController {
             $stock = $_POST['stock'];
 
             $this->model->EditStock($tipo_coca,$envase,$stock,$id_stock);
-        header("Location: " . BASE_URL. "/home" ); 
-        var_dump($tipo_coca,$envase,$stock,$id_stock);
-        die();
+           
         }
     
 public function checkLoggedIn() {

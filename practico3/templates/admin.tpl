@@ -15,3 +15,4 @@
     </div>
 {/if}    
 </form>
+{include file="footer.tpl"}

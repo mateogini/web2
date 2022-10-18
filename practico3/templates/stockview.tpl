@@ -1,29 +1,41 @@
 {include file="header.tpl"}
 
-<table class="table">
+
+<table class="table table-dark table-striped">
 <thead>
-<th> Listado de categorias </th>
-<th> Ver Por: </th>
+<th>N°</th>
+<th>Listado de categorias </th>
+<th>Ver Por: </th>
+{if isset($smarty.session.USER_EMAIL)}
+<th>Borrar </th>
+<th>Editar</th>
+{/if}
 
 <tbody> {foreach from=$tipos item=$tipo}
         <tr>
+        <td scope="col">{$tipo->id_envase}</td>
         <td>{$tipo->envase_name}</td>
         <td><a type="button" href="list/{$tipo->id_envase}" value="{$tipo->id_envase}">{$tipo->envase_name}</a></td>
         {if isset($smarty.session.USER_EMAIL)}
             <td><a href="deletecat/{$tipo->id_envase}" type="button" class="btn btn-outline-danger"value="{$tipo->id_envase}">Borrar </a></td>
-        {/if}
-        
+            <td><a href="editcat/{$tipo->id_envase}" type="button" value="{$tipo->id_envase}" class="btn btn-info">Editar</td> </a>
 
+        {/if}
         </tr> 
     </tbody>    
 {/foreach}
-</table>
+
+    </table>
 <table class="table">
 <thead>
-<tr>
+<tr class="table-danger">
     <th scope='col'> Coca Cola </th>
     <th scope='col'> Envase</th>
      <th scope='col'> Detalle</th>
+     {if isset($smarty.session.USER_EMAIL)}
+     <th>Borrar</th>
+     <th>Editar</th>
+    {/if}
 </tr>
 </thead>
 <tbody>

@@ -42,8 +42,8 @@ switch($params[0]) {
             $cocaController->showFormEdit($id_stock);
             break;
     case 'edit':
-        $cocaController->EditStock();
-        break;
+            $cocaController->EditStock();
+             break;
     case 'validate':
         $adminController->validateUser();
         break;
@@ -56,15 +56,18 @@ switch($params[0]) {
         break;
 
     case 'deletecat':
-        $id_envase = $params[1];
-        $typeController->DeleteCategory($id_envase);
+        $id_stock = $params[1];
+        $typeController->DeleteCategory($id_stock);
         break;
     case 'addcategory':
         $typeController->addCategory();  
         break;
-    case 'editarcat':
-        $TypesController = new TypesController();
-        $TypesController->ShowFormEditCat();  
+     case 'editcat':
+            $id_envase = $params[1];
+            $typeController->showFormEditCat($id_envase);
+            break;
+    case 'editcategory':
+        $typeController->EditCat();  
         break;
     default:
         echo "404 not found";

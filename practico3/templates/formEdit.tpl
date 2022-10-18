@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-  <form action="edit" method= "POST">
+  <form action="{BASE_URL}/edit" method= "POST">
    <div class="mb-3">
    <input type="hidden" value="{$cocacolas->id_stock}" name="id_stock">
   <select class="form-select" maria-label="Default select example" value="{$cocacolas->tipo_coca}" name="tipo_coca">

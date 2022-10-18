@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-17 03:46:11
+/* Smarty version 4.2.1, created on 2022-10-18 00:00:57
   from 'C:\xampp\htdocs\web2\practico3\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634cb3e3410973_25247790',
+  'unifunc' => 'content_634dd0992b66b5_20376908',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ffb0a62146e09e75ec1b0ce6064574e28eca57c6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\practico3\\templates\\header.tpl',
-      1 => 1665971169,
+      1 => 1666044055,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634cb3e3410973_25247790 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634dd0992b66b5_20376908 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +36,7 @@ function content_634cb3e3410973_25247790 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
     <header>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-danger">
   <div class="container-fluid">
     <a class="navbar-brand" href="<?php echo BASE_URL;?>
 /home">Coca Cola Distribuidor</a>
