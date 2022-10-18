@@ -44,7 +44,7 @@ class CocaController {
         $stock = $_POST['stock'];
       
         $id = $this->model->insertStock($tipo_coca, $envase, $stock);
-        header("Location: " . BASE_URL ."/home"); 
+        header("Location: " . BASE_URL); 
         }
 
     } // elimina el stock seleccionado
@@ -71,7 +71,8 @@ class CocaController {
             $stock = $_POST['stock'];
 
             $this->model->EditStock($tipo_coca,$envase,$stock,$id_stock);
-           
+            header("Location: " . BASE_URL .""); 
+
         }
     
 public function checkLoggedIn() {

@@ -17,7 +17,7 @@
     <option value="{$tipos->id_envase}" name="envase">{$tipos->envase_name}</option>
   {/foreach}
 <input type="number"  value="{$cocacolas->stock}" class="form-control" id="exampleFormControlInput1" name="stock" placeholder="stock en packs de 6">
-  <button type="submit" class="btn btn-outline-primary">Editar</button>
+  <button type="submit"  class="btn btn-outline-primary">Editar</button>
 </div>
   </form>
   {include file="footer.tpl"}
